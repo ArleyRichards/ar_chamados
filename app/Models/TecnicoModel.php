@@ -10,6 +10,10 @@ class TecnicoModel extends Model {
     protected $useAutoIncrement = true;
     protected $returnType     = 'array';//RETORNANDO ARRAYS  
     
+    /**
+     * Recupera um Técnico da tabela [tecnicos];
+     * @param int $id Código ID do Técnico
+     */
     public function read($id) {
         $tecnico = $this->find($id);
         return $tecnico;

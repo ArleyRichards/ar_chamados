@@ -9,8 +9,9 @@ class Tecnico extends BaseController {
         $tecnico = new TecnicoModel();
         $fetch = $tecnico->findAll();     
         echo '<pre>';
-        var_dump($fetch);        
-    }
+        var_dump($fetch);     
+        $this->erro(1);
+    }      
     
     public function detalhes($id){
         $tecnico = new TecnicoModel();
@@ -19,5 +20,11 @@ class Tecnico extends BaseController {
         echo '<pre>';
         var_dump($fetch);
     }  
+    
+    private function erro($id){
+        if($id == 1){
+            log_message("error", "Erro ao Gravar os Dados do Técnico");
+        }
+    }
     
 }
